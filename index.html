@@ -1,0 +1,149 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+ 
+<body>
+    <h1 class="heading" style="text-align: center;">Registration Form</h1>
+    <hr>
+    <form  action="/php" name="myForm" onsubmit="return validateform()"  method="post">
+        <div id="persnoldetail">
+            <h3>Personal Detail</h3>
+            <span id="firstnameerror"></span>
+            <input type="text" name="fname" placeholder="First Name" id="fname">
+            <span id="lastnameerror"></span>
+            <input type="text" name="lname" placeholder="Last Name" id="lname">
+            <span id="emalerror"></span>
+            <input type="email" placeholder="Enter Your Email" name="femail" id="femail">
+            <span id="phoneerror"></span>
+            <input type="number" name="fphone" placeholder="Enter Phone Number" id="phone">
+            <span id="casterror"></span>
+            <select name="cast" id="cast">
+                <option value="Blank">Select Your Cast</option>
+                <option value='Genral'>Genral</option>
+                <option value="EWS">Genral EWS</option>
+                <option value="OBC">OBC</option>
+                <option value="Creamy">OBC Creamy Layer</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+            </select>
+            <span id="Religionerror"></span>
+            <select name="Religion" id="Religion">
+                <option value="Blank">Religion</option>
+                <option value="hindu">Hindu</option>
+                <option value="muslim">Muslim</option>
+                <option value="sikh">Sikh</option>
+                <option value="other">Other</option>
+            </select>
+            <span id="stateerror"></span>
+            <input type="text" name="state" placeholder="State" id="state">
+            <span id="districterror"></span>
+            <input type="text" name="District" placeholder="District" id="district">
+            <span id="pinerror"></span>
+            <input type="number" name="pin"  placeholder="Pin Code" id="pin">
+
+            <input type="number" name="Zip" placeholder="Zip Code optional" id="Zip">
+            <span id="taddresserror"></span>
+            <input type="text" name="ftaddress" placeholder=" Temporary Address " id="Taddress">
+            <span id="paddresserror"></span>
+            <input type="text" name="fpaddress" placeholder="Permanent Address" id="Paddress">
+        </div>
+
+        <div id="education">
+            <h3>Education Detail</h3>
+            <span id="choosquaificationerror"></span>
+            <select name="Qualification" id="Qualification">
+                <option value="Blank" selected>Select Highest Qualification</option>
+                <option value="1">1. 10th,matriculation,Secondary School with any Recognized Educational Board in india</option>
+                <option value="2">2. 10+2 Intermediate with Diploma / ITI Certificate in Electronics / Electrical / Hardware /
+                    Computer Hardware / Computer Application / Telecommunication / Instrument Mechanic / IT.</option>
+                <option value="3">3. 12th,Higher Secondary School with any Recognized Educational Board in india with (PCM)
+                    Physics,Chemistry,Maths</option>
+                <option value="4">4. 12th,Higher Secondary School with any Recognized Educational Board in india with (PCB)
+                    Physics,Chemistry, Biology</option>
+                <option value="5">5. 12th,Higher Secondary School with any Recognized Educational Board in india with (Arts) All
+                    essential subject</option>
+                <option value="6">6. 12th,Higher Secondary School with any Recognized Educational Board in india with (Commerce)
+                    Account with essential subject</option>
+                <option value="7">7. 12th,Higher Secondary School with any Recognized Educational Board in india with
+                    (Agriculture) All essential subject</option>
+                <option value="8">8. Bsc in Maths with Physics Chemistry and Maths with any Recognized University in india
+                </option>
+                <option value="9">9. Bsc in Computer science with Physics Chemistry and Maths with any Recognized University in
+                    india </option>
+                <option value="10">10. Bsc in Biology with Physics and Chemistry with any Recognized University in india</option>
+                <option value="11">11. Bsc (Honers) with any Recognized University in india</option>
+                <option value="12">12. Bsc in industria Chemistry with any Recognized University in india</option>
+                <option value="13">13. BA with essential subject with any Recognized University in india</option>
+                <option value="14">14. Bcom with essential subject with any Recognized University in india</option>
+                <option value="15">15. LLB with essential subject with any Recognized University in india</option>
+
+            </select> 
+            <span id="choospasingyearerror"></span>
+            <input type="number" name="passingyear" placeholder="passing year" id="passingyear">
+
+            <span id="percenterror"></span>
+            <input type="number" name="percent" placeholder="percenteg" id="percenteg">
+
+        </div>
+        <div id="confidentialdetail">
+            <h3>Additional Detail</h3>
+            <span id="aadharerror"></span>
+            <input type="number" name="aadhar" placeholder="Aadhar Number" id="aadhar">
+            <span id="samagrerror"></span>
+            <input type="number" name="samagr" placeholder="Enter Your Samagr Id Number" id="samagr">
+            <span id="marksheeterror"></span>
+            <input type="number" name="marksheet" placeholder="Marksheet roll number" id="marksheet">
+        </div>
+        <div id="document">
+            <h3>Document</h3>
+            
+            Photo (jpg/jpeg): <span id="right" class="check"></span><span id="photopdferror"></span><input type="file" name="photo" id="file-upload" >
+           
+            Marksheet(jpg/jpeg) : <span id="demo" class="check"></span><span id="marksheeterror1"></span><input type="file" name="markfile" id="markfile">
+            
+            Signature(jpg/jpeg) : <span id="right3" class="check"></span> <span id="signaturepdferror"></span><input type="file" name="signature" id="file-upload3" >
+            
+            Cast Certificate(jpg/jpeg) : <span id="right4" class="check"></span> <span id="castcirtificatepdferror"></span><input type="file" name="cast" id="file-upload4" >
+
+
+        </div>
+        <div id="account">
+            <h3>Bank Account Detail</h3>
+            <span id="bankerror"></span>
+            <input type="number" name="bank" placeholder="Account Number" id="bank">
+            <span id="ifscerror"></span>
+            <input type="text" name="ifsc" placeholder="IFSC Code" id="ifsc">
+            <span id="linkmobileerror"></span>
+            <input type="number" name="register" placeholder="Register Mobile No." id="ragister">
+        </div>
+
+
+
+        <h3>login criteria</h3>
+        <span id="iderror"></span>
+        <input type="text" name="loginid " placeholder="make your registration id" id="loginid">
+
+        <span id="passworderror"></span>
+        <input type="password" placeholder="enter your Password" name="password" id="myInput">
+        <input class="checkbox" type="checkbox" onclick="myFunction()">Show Password
+        <hr>
+
+
+
+        
+        <div class="sub">
+            <button type="submit" class="submit" id="termsCheckbox">Preview</button>
+        </div>
+
+    </form>
+
+</body>
+<script src="script.js"></script>
+
+</html>
